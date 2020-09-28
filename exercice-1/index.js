@@ -6,8 +6,21 @@ var GridGenerator = function gridGenerator(xAxis, yAxis) {
 
 }
 
+
 GridGenerator.prototype.run = function () {
-  return this.grid();
+      this.grid();
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        
+      }
+      setInterval(this.setColor,this.getRandomNumber());
+      console.log(this.getRandomNumber());
+    
+   
+  
+
+      return 
+
 }
 
 
@@ -31,6 +44,29 @@ GridGenerator.prototype.grid = function () {
 
 }
 
-var toto = new GridGenerator(5, 5);
-toto.run();
+
+GridGenerator.prototype.setColor = function(){
+
+  let cells = document.querySelectorAll('td');
+  console.log(cells);
+
+  cells.forEach(function(cell) {
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    cell.style.backgroundColor = "#" + randomColor;
+  });
+
+}
+
+GridGenerator.prototype.getRandomNumber = function(){
+ 
+  return Math.floor(Math.random()*(3-1)+1)*1000;
+
+}
+
+
+
+
+new GridGenerator(5, 5).run();
+// toto.run();
+// window.setInterval(toto.setColor,toto.getRandomNumber());
 
