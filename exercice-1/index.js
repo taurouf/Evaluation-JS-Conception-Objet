@@ -1,30 +1,22 @@
 'use strict'
 
+/**
+ * 
+ * @param {number} xAxis 
+ * @param {number} yAxis 
+ */
 var GridGenerator = function gridGenerator(xAxis, yAxis) {
   this.xAxis = xAxis;
   this.yAxis = yAxis;
-
 }
 
 
 GridGenerator.prototype.run = function () {
-      this.grid();
-      for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        
-      }
-      setInterval(this.setColor,this.getRandomNumber());
-      console.log(this.getRandomNumber());
-    
-   
-  
-
-      return 
-
+  this.grid();
+  setInterval(this.setColor, this.getRandomNumber())
+  console.log(this.getRandomNumber());
+  return
 }
-
-
-
 
 GridGenerator.prototype.grid = function () {
   var matrix = document.createElement("table");
@@ -40,33 +32,23 @@ GridGenerator.prototype.grid = function () {
     matrix.appendChild(tr);
   }
   document.querySelector("body").appendChild(matrix);
-
-
 }
 
 
-GridGenerator.prototype.setColor = function(){
-
+GridGenerator.prototype.setColor = function () {
   let cells = document.querySelectorAll('td');
   console.log(cells);
-
-  cells.forEach(function(cell) {
-    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+  cells.forEach(function (cell) {
+    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
     cell.style.backgroundColor = "#" + randomColor;
   });
-
 }
 
-GridGenerator.prototype.getRandomNumber = function(){
- 
-  return Math.floor(Math.random()*(3-1)+1)*1000;
-
+GridGenerator.prototype.getRandomNumber = function () {
+  return Math.floor(Math.random() * (3 - 1) + 1) * 1000;
 }
-
-
 
 
 new GridGenerator(5, 5).run();
-// toto.run();
-// window.setInterval(toto.setColor,toto.getRandomNumber());
+
 
