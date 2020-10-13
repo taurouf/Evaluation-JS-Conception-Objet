@@ -2,12 +2,11 @@ var MyFormCheck = function MyFormCheck() {
 
 }
 
-MyFormCheck.prototype.run = function() {
+MyFormCheck.prototype.run = function () {
   this.form();
-  this.check();
 }
 
-MyFormCheck.prototype.form = function() {
+MyFormCheck.prototype.form = function () {
   var form = document.createElement('form');
   var lastNameLabel = document.createElement('Label');
   lastNameLabel.innerHTML = 'Last Name'
@@ -48,21 +47,21 @@ MyFormCheck.prototype.form = function() {
   document.body.appendChild(form);
 }
 
-MyFormCheck.prototype.check = function() {
+MyFormCheck.prototype.check = function () {
   var button = document.querySelector(('[type="button"]'));
   var ul = document.createElement('ul');
-  button.addEventListener('click', function(){
+  button.addEventListener('click', function () {
     ul.textContent = '';
     var lastNameCorrect = new RegExp(/[a-z]+/g);
     var liLastName = document.createElement('li');
     var lastNameValue = document.querySelector('.lastName').value;
     var lastNameValueError = document.querySelector('.lastName');
 
-    if(lastNameCorrect.test(lastNameValue,lastNameValueError)) {
+    if (lastNameCorrect.test(lastNameValue, lastNameValueError)) {
 
-        liLastName.textContent = 'Nom valide';
+      liLastName.textContent = 'Nom valide';
       liLastName.style.color = 'green';
-    }else {
+    } else {
       liLastName.textContent = 'Nom invalide';
       liLastName.style.color = 'red';
       lastNameValueError.style.backgroundColor = 'red';
@@ -74,10 +73,10 @@ MyFormCheck.prototype.check = function() {
     var firstNameValue = document.querySelector('.firstName').value;
     var firstNameValueError = document.querySelector('.firstName');
 
-    if(firstNameCorrect.test(firstNameValue,firstNameValueError)) {
+    if (firstNameCorrect.test(firstNameValue, firstNameValueError)) {
       liFirstName.textContent = 'Prénom valide';
       liFirstName.style.color = 'green';
-    }else {
+    } else {
       liFirstName.textContent = 'Prénom invalide';
       liFirstName.style.color = 'red';
       firstNameValueError.style.backgroundColor = 'red';
@@ -88,26 +87,24 @@ MyFormCheck.prototype.check = function() {
     var liEmail = document.createElement('li');
     var emailValue = document.querySelector('.email').value;
     var emailValueError = document.querySelector('.email')
-    if(emailCorrect.test(emailValue,emailValueError)) {
+    if (emailCorrect.test(emailValue, emailValueError)) {
       liEmail.textContent = 'Email valide';
       liEmail.style.color = 'green';
-    }else {
-        
+    } else {
       liEmail.textContent = 'Email invalide';
       liEmail.style.color = 'red';
       emailValueError.style.backgroundColor = 'red'
     }
     ul.appendChild(liEmail);
-
     var passwordCorrect = new RegExp(/[a-z]+/g);
     var liPassword = document.createElement('li');
     var passwordValue = document.querySelector('.password').value;
     var passwordValueError = document.querySelector('.password');
 
-    if(passwordCorrect.test(passwordValue,passwordValueError)) {
+    if (passwordCorrect.test(passwordValue, passwordValueError)) {
       liPassword.textContent = 'Mot de passe valide';
       liPassword.style.color = 'green';
-    }else {
+    } else {
       liPassword.textContent = 'Mot de passe invalide';
       liPassword.style.color = 'red';
       passwordValueError.style.backgroundColor = 'red';
@@ -117,5 +114,6 @@ MyFormCheck.prototype.check = function() {
   })
 }
 
-var form1 = new MyFormCheck();
-form1.run();
+var form = new MyFormCheck();
+
+form.run();
