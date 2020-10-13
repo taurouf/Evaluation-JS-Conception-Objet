@@ -4,6 +4,7 @@ var MyFormCheck = function MyFormCheck() {
 
 MyFormCheck.prototype.run = function () {
   this.form();
+  this.check();
 }
 
 MyFormCheck.prototype.form = function () {

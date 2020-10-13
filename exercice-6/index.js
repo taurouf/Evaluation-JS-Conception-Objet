@@ -6,7 +6,7 @@ var MyNumberCheck = function MyNumberCheck() {
 
 MyNumberCheck.prototype.run = function () {
   this.form();
-  this.check();
+  this.checkNumber();
 }
 
 MyNumberCheck.prototype.form = function () {
@@ -25,7 +25,7 @@ MyNumberCheck.prototype.form = function () {
   document.body.appendChild(form);
 }
 
-MyNumberCheck.prototype.check = function () {
+MyNumberCheck.prototype.checkNumber = function () {
   var button = document.querySelector('.button');
   var p = document.createElement('p');
   button.addEventListener('click', function () {
