@@ -18,7 +18,6 @@ MyAverage.prototype.run = function() {
  */
 MyAverage.prototype.compute = function() {
     var i=0;
-    
     var somme=0;
     var moyenne=0;
     var nb_notes=0;
