@@ -6,6 +6,7 @@ var MyNumberCheck = function MyNumberCheck() {
 
 MyNumberCheck.prototype.run = function () {
   this.form();
+  this.check();
 }
 
 MyNumberCheck.prototype.form = function () {
@@ -24,6 +25,22 @@ MyNumberCheck.prototype.form = function () {
   document.body.appendChild(form);
 }
 
+MyNumberCheck.prototype.check = function () {
+  var button = document.querySelector('.button');
+  var p = document.createElement('p');
+  button.addEventListener('click', function () {
+    var numberCorrect = new RegExp(/^0[1-6]{1}(([0-9]{2}){4})|((\s[0-9]{2}){4})|((-[0-9]{2}){4})$/g);
+    var numberValue = document.querySelector('.tel').value;
+    if (numberCorrect.test(numberValue)) {
+      p.textContent = 'Numero valide';
+      p.style.color = 'green';
+    } else {
+      p.textContent = 'Numero invalide';
+      p.style.color = 'red';
+    }
+    document.body.appendChild(p);
+  })
+}
 
 var number1 = new MyNumberCheck();
 number1.run();
