@@ -35,3 +35,26 @@ RenderWorldMap.prototype.select = function() {
       })
     })}
 
+
+    RenderWorldMap.prototype.legend = function() {
+        var legend = document.createElement('ul');
+        var country = document.body.querySelectorAll('path');
+        var hover = document.createElement('li');
+        var selected = document.createElement('li');
+      
+        country.forEach(function(path) {
+          path.addEventListener('mouseenter', function(e) {
+            hover.innerHTML = 'Pays survolé : ' + e.target.id;
+            legend.appendChild(hover);
+          });
+          path.addEventListener('click', function(e){
+            selected.innerHTML = 'Pays sélectionner : ' + e.target.id;
+            legend.prepend(selected);
+          });
+        })
+        document.body.appendChild(legend);
+      }
+
+
+      var map = new RenderWorldMap();
+      map1.run();
