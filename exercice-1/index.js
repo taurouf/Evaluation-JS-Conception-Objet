@@ -10,14 +10,18 @@ var GridGenerator = function gridGenerator(xAxis, yAxis) {
   this.yAxis = yAxis;
 }
 
-
+/**
+ * this is a function for the run app
+ */
 GridGenerator.prototype.run = function () {
   this.grid();
   setInterval(this.setColor, this.getRandomNumber())
   console.log(this.getRandomNumber());
   return
 }
-
+/**
+ * this is a function create the grid
+ */
 GridGenerator.prototype.grid = function () {
   var matrix = document.createElement("table");
   for (var i = 0; i < this.xAxis; i++) {
@@ -34,7 +38,9 @@ GridGenerator.prototype.grid = function () {
   document.querySelector("body").appendChild(matrix);
 }
 
-
+/**
+ * this is a function generate color
+ */
 GridGenerator.prototype.setColor = function () {
   let cells = document.querySelectorAll('td');
   console.log(cells);
@@ -44,6 +50,9 @@ GridGenerator.prototype.setColor = function () {
   });
 }
 
+/**
+ * this is a function generate random number for the param a setcolor
+ */
 GridGenerator.prototype.getRandomNumber = function () {
   return Math.floor(Math.random() * (3 - 1) + 1) * 1000;
 }
