@@ -1,14 +1,22 @@
 'use strict';
-
+/**
+ * represent number check
+ * @constructor
+ * 
+ */
 var MyNumberCheck = function MyNumberCheck() {
 
 }
-
+/**
+ * this is a function run app
+ */
 MyNumberCheck.prototype.run = function () {
   this.form();
   this.checkNumber();
 }
-
+/**
+ * this is a function create form the html
+ */
 MyNumberCheck.prototype.form = function () {
   var form = document.createElement('form');
   var tel = document.createElement('input');
@@ -24,7 +32,9 @@ MyNumberCheck.prototype.form = function () {
   form.addEventListener("keydown", function (e) { if (e.keyCode == 13) e.preventDefault() });
   document.body.appendChild(form);
 }
-
+/**
+ * this is a function create regex for checknumber
+ */
 MyNumberCheck.prototype.checkNumber = function () {
   var button = document.querySelector('.button');
   var p = document.createElement('p');
