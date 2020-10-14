@@ -1,12 +1,22 @@
+/**
+ * Represente form check
+ * @constructor
+ */
 var MyFormCheck = function MyFormCheck() {
 
 }
 
+/**
+ * this is a function run app
+ */
 MyFormCheck.prototype.run = function () {
   this.form();
   this.check();
 }
 
+/**
+ * this is a function create form
+ */
 MyFormCheck.prototype.form = function () {
   var form = document.createElement('form');
   var lastNameLabel = document.createElement('Label');
@@ -47,7 +57,9 @@ MyFormCheck.prototype.form = function () {
   form.appendChild(submit);
   document.body.appendChild(form);
 }
-
+/**
+ * this is a function check input
+ */
 MyFormCheck.prototype.check = function () {
   var button = document.querySelector(('[type="button"]'));
   var ul = document.createElement('ul');
